@@ -1,23 +1,12 @@
-/* EJERCICIO 1
-Construir el algoritmo para un programa que ingrese tres
-notas de un alumno, si el promedio es menor o igual a 3.9
-mostrar un mensaje "Estudie“, de lo contrario un mensaje que
-diga "becado"
+/* EJERCICIO 2
+Dado un número indicar si es par o impar y si es mayor de 10.
 */
 
-let notas = [];
-let promedio;
+let numero = parseFloat(prompt(`Ingrese el numero a calcular si es par o impar`));
+let cal= numero%2;
 
-for (let i = 1; i < 4; i++){
-    notas.push(parseFloat(prompt(`Ingrese la Nota ${i}`)));
-}
-
-console.log(notas);
-promedio = (notas[0]+notas[1]+notas[2])/3;
-console.log(`${promedio.toFixed(2)}`);
-
-if (promedio<=3.9){
-    console.log(`El alumno debe ESTUDIAR MAS`)
+if (cal==0){
+    console.log(`El numero`, numero ,`es PAR`)
 }else{
-    console.log(`El alumno se gano la BECA`)
+    console.log(`El numero`, numero ,`es IMPAR`)
 }
