@@ -1,19 +1,25 @@
-/* EJERCICIO 4
-Construir el algoritmo que solicite el nombre y edad de 3
-personas y determine el nombre de la persona con mayor edad.
+/* EJERCICIO 5
+Construir el algoritmo que lea por teclado dos números,
+si el primero es mayor al segundo informar su suma y
+diferencia, en caso contrario, informar el producto y la
+división del primero respecto al segundo.   
 */
-let cont = 0;
-let edadMayor = 0;
-let nombreMayor = 0;
+let num_one     = 0;
+let num_two     = 0;
+let suma        = 0;
+let diferencia  = 0;
 
-while (cont < 3){
-    let nombre = prompt(`Ingresa el Nombre de la persona`);
-    let edad = Number(prompt(`Ingresa la Edad de la persona`));
-    if(edad > edadMayor){
-        edadMayor = edad;
-        nombreMayor = nombre;
-    }
-    cont = cont + 1;
+num_one = Number(prompt("Ingrese el primer numero: "));
+num_two = Number(prompt("Ingrese el segundo numero: "));
+
+if(num_one>num_two){
+    suma        = num_one + num_two;
+    diferencia  = num_one - num_two;
+    console.log("El resultado de la suma es: ",suma );
+    console.log("El resultado de la resta es: ", diferencia);
+}else{
+    producto = num_one * num_two;
+    division = num_one / num_two;
+    console.log("El resultado del producto es: ",producto );
+    console.log("El resultado de la división es: ", division);
 }
-
-console.log(`La persona con mayor Edad es ${nombreMayor}`);
