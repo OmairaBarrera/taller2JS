@@ -1,30 +1,37 @@
-/* EJERCICIO 8
-Programa que Ingrese por teclado:
-    a. el valor del lado de un cuadrado para mostrar por pantalla el
-perímetro del mismo
-    b. la base y la altura de un rectángulo para mostrar el área del
-mismo
+/* EJERCICIO 9
+N atletas han pasado a finales en salto triple en los juegos
+olímpicos femenino de 2022. Diseñe un programa que pida por
+teclado los nombres de cada atleta finalista y a su vez, sus
+marcas del salto en metros. Informar el nombre de la atleta
+campeona que se quede con la medalla de oro y si rompió
+récord, reportar el pago que será de 500 millones. El récord
+esta en 15,50 metros.
 */
-let cal_cuadrado = 0;
-let lado = 0;
-let cal_rectangulo = 0;
-let base = 0;
-let altura = 0;
+let finalistas = 0;
+let datos = [];
+let ganador = 0;
+let ganadorNombre = " ";
 
-opcion  = Number(prompt("Menu Inicio \n\t1. Calcular perimetro cuadrado. \n\t2. Calcular area rectangulo."));
-if(opcion == 1){
-    lado  = Number(prompt("Ingrese el lado del cuadrado: "));
-    cal_cuadrado = 4*lado;
-    console.log("El perimetro del cuadrado es: ", cal_cuadrado);
-}
-if (opcion == 2){
-    base  = Number(prompt("Ingrese la base del rectangulo: "));
-    altura  = Number(prompt("Ingrese la altura del rectangulo: "));
-    cal_rectangulo = base*altura;
-    console.log("El area del rectangulo es: ", cal_rectangulo);
-}
-if (opcion != 1 && opcion != 2){
-    console.log("Opcion no valida, vuelva a intentarlo...")
+finalistas = Number(prompt("Bienvenidos a las finales en salto triple \n Ingrese el numero de finalistas"))
+
+for (let i=0; i < finalistas; i++){
+    let nombre = prompt(`Ingresa el nombre del finalista ${i+1}: `);
+    let marca = Number(prompt(`Ingresa la marca del finalista ${i+1}: `));
+    datos.push({
+        Nombre: nombre,
+        Marca: marca,
+    })
+
+    if (marca > ganador){
+        ganador = marca;
+        ganadorNombre = nombre;
+    }
 }
 
-
+console.table(datos);
+console.log(`El ganador de la medalla de oro es: ${ganadorNombre}, con una marca: ${ganador}`)
+if (ganador > 15.50){
+    console.log("El ganador rampio el record, se realizara el pago de 500 millones")
+} else {
+    console.log("El ganador no rompio el record.")
+}
