@@ -1,9 +1,19 @@
-/* EJERCICIO 3
-Construir el algoritmo para determinar el voltaje de un
-circuito a partir de la resistencia y la intensidad de corriente.
+/* EJERCICIO 4
+Construir el algoritmo que solicite el nombre y edad de 3
+personas y determine el nombre de la persona con mayor edad.
 */
-alert(`Calcular el Voltaje de un circuito`)
-let R = parseFloat(prompt(`Ingrese el valor de la resistencia en ohmios`));
-let I = parseFloat(prompt(`Ingrese el valor de la Intensidad en Amperios`));
+let cont = 0;
+let edadMayor = 0;
+let nombreMayor = 0;
 
-console.log(`El Votaje tiene un valor de ${R*I} voltios`)
+while (cont < 3){
+    let nombre = prompt(`Ingresa el Nombre de la persona`);
+    let edad = Number(prompt(`Ingresa la Edad de la persona`));
+    if(edad > edadMayor){
+        edadMayor = edad;
+        nombreMayor = nombre;
+    }
+    cont = cont + 1;
+}
+
+console.log(`La persona con mayor Edad es ${nombreMayor}`);
